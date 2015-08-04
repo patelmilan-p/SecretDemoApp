@@ -1,0 +1,18 @@
+<h2> Secret Codes </h2>
+<br>
+<table class="table">
+  <th>
+    <td>Codes</td>
+    <td>Associated Email</td>
+  </th>
+  <% @secret_codes.each do |secret_code| %>
+    <tr>
+      <td>secret_code.code</td>
+      <td>
+        <% if secret_code.user %>
+          secret_code.user.email
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
