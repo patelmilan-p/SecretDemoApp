@@ -21,8 +21,10 @@
   </div>
 
   <div class="field form-group">
+    <%#<%= f.fields_for :secret_code do |ff| %>
     <%= label_tag :secret_code, "Secret Code", class: "sr-only" %><br />
     <%= text_field_tag :secret_code, nil, autocomplete: "off", class: "form-control", placeholder: "Secret Code" %>
+    <%#<% end %>
   </div>
 
   <div class="actions">

@@ -4,5 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :secret_code
+  has_one :secret_code, dependent: :nullify
+
+  accepts_nested_attributes_for :secret_code
 end

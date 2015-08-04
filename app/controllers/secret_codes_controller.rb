@@ -1,6 +1,6 @@
 class SecretCodesController < ApplicationController
   def index
-    @secret_codes = SecretCode.all.to_a
+    @secret_codes = SecretCode.all
   end
 
   def create

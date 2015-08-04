@@ -11,9 +11,7 @@
         <%= secret_code.code %>
       </td>
       <td>
-        <% if secret_code.user %>
-          secret_code.user.email
-        <% end %>
+        <%= secret_code.user.email if secret_code.user %>
       </td>
     </tr>
   <% end %>
