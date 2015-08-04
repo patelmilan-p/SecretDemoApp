@@ -16,3 +16,11 @@
     </tr>
   <% end %>
 </table>
+<br>
+<%= form_tag secret_codes_url, class: "form-inline" do %>
+  <div class="form-group">
+    <%= label_tag "Number of Codes", nil, for: "count" %>
+    <%= select_tag "count", options_for_select([1,10,20,50,100], 10), {class: "form-control"} %>
+  </div>
+  <%= button_tag "Generate", class: "btn btn-primary" %>
+<% end %>
