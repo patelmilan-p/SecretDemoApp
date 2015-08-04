@@ -4,7 +4,7 @@ class SecretCodesController < ApplicationController
   end
 
   def create
-    SecretCode.generate_secret_codes(params[:count])
+    SecretCode.generate_secret_codes(params[:count].to_i)
     redirect_to secret_codes_path
   end
 end
