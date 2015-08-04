@@ -5,6 +5,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :secret_code, dependent: :nullify
-
-  accepts_nested_attributes_for :secret_code
 end
