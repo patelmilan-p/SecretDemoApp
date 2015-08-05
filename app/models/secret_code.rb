@@ -1,16 +1,13 @@
-require 'Hashids'
-
 class SecretCode < ActiveRecord::Base
   belongs_to :user
 
   validates_presence_of :code
 
   def self.generate_secret_codes(count)
-
-    hash = Hashids.new("Secret code demo app salt", 5)
-
-    (1..count).each do |i|
-      SecretCode.create(code: hash.encode(i))
+    (1..count).each do
+      o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
+      string = (0...5).map { o[rand(o.length)] }.join
+      SecretCode.create(code: string)
     end
   end
 end

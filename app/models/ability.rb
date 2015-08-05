@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read, SecretCode if user and user.role == "admin"
+    can :manage, SecretCode if user and user.role == "admin"
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
